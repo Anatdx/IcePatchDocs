@@ -62,7 +62,7 @@ Existem várias maneiras de corrigir o IcePatch.
 
 1. Baixe a versão mais recente do IcePatch no [GitHub](https://github.com/Anatdx/IcePatch/releases).
 
-2. Clique no botão ![Patch Button](./PButton.png) no canto superior direito, depois em `Selecionar imagem boot para patch`.
+2. Clique no botão ![Patch Button](/PButton.png) no canto superior direito, depois em `Selecionar imagem boot para patch`.
 
 3. Selecione seu `boot.img`.
 

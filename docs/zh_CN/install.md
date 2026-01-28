@@ -58,7 +58,7 @@ IcePatch 有多种修补方法。
 
 1. 前往[GitHub](https://github.com/Anatdx/IcePatch/releases)下载最新管理器。
 
-2. 点击主页右上角的 ![Patch Button](./PButton.png) 按钮，之后选择`选择一个启动镜像并修补`选项。
+2. 点击主页右上角的 ![Patch Button](/PButton.png) 按钮，之后选择`选择一个启动镜像并修补`选项。
 
 3. 选择你的 `boot.img`。
 

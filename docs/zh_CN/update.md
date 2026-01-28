@@ -12,7 +12,7 @@
 
 > 如果需要，请重新验证超级密钥。
 
-2. 点击右上角的 ![Patch Button](./PButton.png)  
+2. 点击右上角的 ![Patch Button](/PButton.png)  
 
 3. 选择 `修补并安装`
 
@@ -24,7 +24,7 @@ IcePatch 的保 root OTA 升级流程与 Magisk 保持一致。
 
 1. 正常 OTA 流程
 
-2. 在 OTA 更新安装完成时(提示重启时)，打开 IcePatch 管理器，点击右上角的 ![Patch Button](./PButton.png)  
+2. 在 OTA 更新安装完成时(提示重启时)，打开 IcePatch 管理器，点击右上角的 ![Patch Button](/PButton.png)  
 
 3. 选择 `安装到未使用的槽位（OTA 后）`
 
@@ -42,7 +42,7 @@ IcePatch 的 OTA 功能目前不太稳定，可能会出现问题。当遇到问
 
 ## 其他注意事项 {#Miscellaneous}
 
-本文档所述内容基于最新的 IcePatch 管理器。当你无法找到本文里提到的按钮![Patch Button](./PButton.png)时，这说明你的 IcePatch 管理器版本过低。
+本文档所述内容基于最新的 IcePatch 管理器。当你无法找到本文里提到的按钮![Patch Button](/PButton.png)时，这说明你的 IcePatch 管理器版本过低。
 
 ::: warning
 旧版将不再支持且存在超级密钥泄露的安全隐患。

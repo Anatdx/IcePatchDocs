@@ -12,7 +12,7 @@ Você pode atualizar diretamente no app.
 
 > Por favor, reconfirme a SuperKey, se necessário.
 
-2. Clique no botão no canto superior direito ![Patch Button](./PButton.png)
+2. Clique no botão no canto superior direito ![Patch Button](/PButton.png)
 
 3. Selecione `Patch e instalação`
 
@@ -24,7 +24,7 @@ Mantenha o processo de atualização OTA com root do IcePatch consistente com o 
 
 1. Baixe e inicie o processo de instalação da atualização OTA através do software de sua ROM
 
-2. Após a conclusão de instalação da atualização OTA (quando solicitado a reiniciar), abra o IcePatch e clique no botão no canto superior direito ![Patch Button](./PButton.png)
+2. Após a conclusão de instalação da atualização OTA (quando solicitado a reiniciar), abra o IcePatch e clique no botão no canto superior direito ![Patch Button](/PButton.png)
 
 3. Selecione `Instalar no slot inativo (Após o OTA)`
 
@@ -42,7 +42,7 @@ Se você estiver usando MIUI/Xiaomi HyperOS (especialmente a versão Dev Edition
 
 ## Diversos {#Miscellaneous}
 
-O conteúdo descrito neste documento é baseado na versão mais recente do IcePatch. Se você não conseguir encontrar os botões mencionados neste documento, ![Patch Button](./PButton.png) significa que a versão do IcePatch que você está usando é muito antiga.
+O conteúdo descrito neste documento é baseado na versão mais recente do IcePatch. Se você não conseguir encontrar os botões mencionados neste documento, ![Patch Button](/PButton.png) significa que a versão do IcePatch que você está usando é muito antiga.
 
 ::: warning AVISO
 Versões mais antigas não são mais suportadas, e há risco de comprometer a SuperKey.
