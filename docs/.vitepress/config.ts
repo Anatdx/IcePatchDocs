@@ -5,12 +5,12 @@ import { resolve } from 'path'
 import { defineAsyncComponent } from 'vue'
 
 export default defineConfig({
-    title: 'APatch Docs',
+    title: 'IcePatch Docs',
     locales: locales.locales,
     ignoreDeadLinks: true,
     lastUpdated: true,
     sitemap: {
-        hostname: 'https://apatch.dev'
+        hostname: 'https://icepatch.anatdx.com'
     },
     theme: {
         asyncLinks: true // 启用异步模块和链接渲染

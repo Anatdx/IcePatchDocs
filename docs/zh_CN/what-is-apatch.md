@@ -1,6 +1,8 @@
-# 什么是 APatch？
+# 什么是 IcePatch？
 
 适用于 Android 设备的基于内核的 Root 新解决方案，可以工作在内核模式，并直接在内核空间中为用户空间应用程序授予 root 权限。
+
+IcePatch 是 APatch 的 fork 项目，在尽量保持兼容性的前提下持续维护与扩展。
 
 ## 特点
 
@@ -10,13 +12,13 @@
 
 提供内核补丁模块支持。允许将任何代码注入内核（提供内核函数 `inline-hook` 和 `syscall-table-hook`）。
 
-APatch 依赖于 KernelPatch。
+IcePatch 依赖于 KernelPatch。
 
-APatch 管理器 和 APM 的源代码来自对 KernelSU 管理器 和 KernelSU 的复制和修改。
+IcePatch 管理器 和 APM 的源代码来自对 KernelSU 管理器 和 KernelSU 的复制和修改。
 
 ## 如何使用？
 
-请参考: [APatch 安装指南](/zh_CN/install)
+请参考: [IcePatch 安装指南](/zh_CN/install)
 
 ## 如何修补？
 
@@ -24,9 +26,9 @@ APatch 管理器 和 APM 的源代码来自对 KernelSU 管理器 和 KernelSU �
 
 ## 许可
 ```
-版权所有 (C) 2023 - 至今 bmax121 和 APatch 开发者
+版权所有 (C) 2023 - 至今 bmax121 和 IcePatch 开发者
 
-APatch 是自由软件，你可以在遵守由自由软件基金会发表的 GNU 通用公共许可证(第 3 版)的前提下再分发和/或修改本软件。
+IcePatch 是自由软件，你可以在遵守由自由软件基金会发表的 GNU 通用公共许可证(第 3 版)的前提下再分发和/或修改本软件。
 
 我们分发该软件的本意是希望其具有实用性，但本软件不附带任何形式的担保，亦不以任何形式保证本软件的适销性或其在特定用途下的适用性。请参阅 GNU 通用公共许可证的文本以了解详情。
 
@@ -35,8 +37,8 @@ APatch 是自由软件，你可以在遵守由自由软件基金会发表的 GNU
 
 ## 重要提醒
 
-APatch 是自由软件，允许任何人在遵守我们使用的 GNU GPLv3 许可证或经过权利人另行许可后创建其自己的分支。
+IcePatch 是自由软件，允许任何人在遵守我们使用的 GNU GPLv3 许可证或经过权利人另行许可后创建其自己的分支。
 
-APatch 的开发者难以做到对每一个 APatch 的发行版进行代码审查(无论其自由与否)，而你使用第三方 APatch 发行版时所遇到的任何问题都与 APatch 开发者无关，APatch 开发者也不对任何第三方 APatch 发行版做任何形式的担保。
+IcePatch 的开发者难以做到对每一个 IcePatch 的发行版进行代码审查(无论其自由与否)，而你使用第三方 IcePatch 发行版时所遇到的任何问题都与 IcePatch 开发者无关，IcePatch 开发者也不对任何第三方 IcePatch 发行版做任何形式的担保。
 
-你需要自行向第三方 APatch 发行版的开发者反馈你遇到的问题。
+你需要自行向第三方 IcePatch 发行版的开发者反馈你遇到的问题。

@@ -1,4 +1,4 @@
-# APatch 安装指南
+# IcePatch 安装指南
 
 [[toc]]
 
@@ -8,7 +8,7 @@
 
 2. 你可以在终端输入或者adb输入 `zcat /proc/config.gz | grep CONFIG_KALLSYMS` 查询你的内核是否支持修补 （需ROOT）。
 
-3. [点击此处](https://github.com/bmax121/APatch/releases)以获取最新稳定版本的APatch管理器。
+3. [点击此处](https://github.com/Anatdx/IcePatch/releases)以获取最新稳定版本的IcePatch管理器。
 
 4. 从刷机包或者其他方式提取你手机原厂的 `boot.img` ，稍后需要对进行修补。
 
@@ -17,14 +17,14 @@
 ::: tip
 1. 进行下一步之前请确认你会使用 ADB 和 fastboot 工具，具有刷机方面的相关经验。如果你没有了解过，建议使用搜索引擎先学习相关知识。
 
-2. APatch 无论任何设备都是修补 `boot`，不要尝试修补和刷入`init_boot`或者其他分区的镜像文件，APatch 开发者对由此导致的修补及启动失败不负任何责任。
+2. IcePatch 无论任何设备都是修补 `boot`，不要尝试修补和刷入`init_boot`或者其他分区的镜像文件，IcePatch 开发者对由此导致的修补及启动失败不负任何责任。
 
 3. 避免使用被其他管理器修补过 `Boot 文件` 进行修补，防止出现意料之外的情况。
 :::
 
 ## 安装要求
 
-APatch 的要求主要体现于内核的配置。内核配置的要求如下:
+IcePatch 的要求主要体现于内核的配置。内核配置的要求如下:
 
 ```txt
 CONFIG_KALLSYMS=y
@@ -52,20 +52,20 @@ CONFIG_KALLSYMS_ALL=n (初步支持)
 
 ## 修补 {#how-to-patch}
 
-APatch 有多种修补方法。
+IcePatch 有多种修补方法。
 
 ### 自动修补
 
-1. 前往[GitHub](https://github.com/bmax121/APatch/releases)下载最新管理器。
+1. 前往[GitHub](https://github.com/Anatdx/IcePatch/releases)下载最新管理器。
 
-2. 点击主页右上角的 ![Patch Button](/PButton.png) 按钮，之后选择`选择一个启动镜像并修补`选项。
+2. 点击主页右上角的 ![Patch Button](./PButton.png) 按钮，之后选择`选择一个启动镜像并修补`选项。
 
 3. 选择你的 `boot.img`。
 
-4. 在“超级密钥”卡片中设置一个密码，之后 APatch 管理器会将其作为超级密钥以解锁 root。
+4. 在“超级密钥”卡片中设置一个密码，之后 IcePatch 管理器会将其作为超级密钥以解锁 root。
 
 :::warning 
-禁止设置 `12345678` 等弱密码，新版 APatch 管理器 已强制使用强密码  [原因](/zh_CN/warn)。
+禁止设置 `12345678` 等弱密码，新版 IcePatch 管理器 已强制使用强密码  [原因](/zh_CN/warn)。
 :::
 
 5. 点击“开始修补”并等待修补完成。修补成功后会显示修补后的 img 镜像 路径。例如: `/storage/emulated/0/Download/apatch_version_version_randomletter.img`
@@ -170,13 +170,13 @@ fastboot reboot
 
 ### 直接刷入
 
-最新版本的 APatch 支持从 TWRP 等第三方 REC 一键刷入。
+最新版本的 IcePatch 支持从 TWRP 等第三方 REC 一键刷入。
 
 ::: warning
 此功能于版本 `10888` 引入，更早的版本不支持这种方式。
 :::
 
-将下载的 APatch 安装包 (.apk) 后缀改为 .zip，例如从 `APatch-10888-release.apk` 到 `APatch-10888-release.zip`，随后使用第三方 REC 的刷入功能即可自动刷入安装 APatch。
+将下载的 IcePatch 安装包 (.apk) 后缀改为 .zip，例如从 `IcePatch-10888-release.apk` 到 `IcePatch-10888-release.zip`，随后使用第三方 REC 的刷入功能即可自动刷入安装 IcePatch。
 
 ::: tip
 同样的，第三方类原生 ROM 的 REC(例如 LineageOS)所使用的 `adb sideload` 方法也支持。
@@ -184,7 +184,7 @@ fastboot reboot
 
 ::: warning
 **注意 自动刷入不会使用固定的超级密钥！相反的，使用此方式得到的超级密钥为随机数字 + 字母的组合。**  
-如果您需要自定义自己的超级密钥，请在开机后手动进入 APatch 管理器并重新修补，以此设置你自己的超级密钥。
+如果您需要自定义自己的超级密钥，请在开机后手动进入 IcePatch 管理器并重新修补，以此设置你自己的超级密钥。
 :::
 
 ## 卸载
@@ -195,7 +195,7 @@ fastboot reboot
 此功能于版本 `10888` 引入，更早的版本不支持这种方式。
 :::
 
-下载 APatch 安装包，将安装包后缀改为zip，并将安装包文件名改为带有 `uninstall` 字样的名字。例如，从 `APatch-10888-release.apk` 到 `APatch-10888-release-uninstall.zip`，随后使用 REC 刷入即可。
+下载 IcePatch 安装包，将安装包后缀改为zip，并将安装包文件名改为带有 `uninstall` 字样的名字。例如，从 `IcePatch-10888-release.apk` 到 `IcePatch-10888-release-uninstall.zip`，随后使用 REC 刷入即可。
 
 ::: tip
 同样的，和安装一样，卸载也支持使用 `adb sideload`。

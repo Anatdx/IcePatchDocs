@@ -15,7 +15,7 @@ export default defineConfig({
 		},
 
 		socialLinks: [
-			{ icon: 'github', link: 'https://github.com/bmax121/APatch' },
+			{ icon: 'github', link: 'https://github.com/Anatdx/IcePatch' },
 		],
 	},
 })
@@ -29,7 +29,7 @@ function sidebarGuide() {
 		{
 			text: 'Руководство',
 			items: [
-				{ text: 'Что такое APatch?', link: '/ru/what-is-apatch' },
+				{ text: 'Что такое IcePatch?', link: '/ru/what-is-apatch' },
 				{ text: 'Предупреждение', link: '/ru/warn' },
 				{ text: 'Установка', link: '/ru/install' },
 				{ text: 'Обновление', link: '/ru/update' },

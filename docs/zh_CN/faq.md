@@ -2,28 +2,28 @@
 
 [[toc]]
 
-## 什么是 APatch？
+## 什么是 IcePatch？
 
 ::: info
 [这里](/zh_CN/what-is-apatch)的介绍更完整。
 :::
 
-APatch 是一种类似于 Magisk 或 KernelSU 的 root 解决方案，但 APatch 提供更多功能。
-APatch 分别结合了 Magisk 方便易用的通过 `boot.img` 安装的方法，和 KernelSU 强大的内核修补能力。
+IcePatch 是一种类似于 Magisk 或 KernelSU 的 root 解决方案，但 IcePatch 提供更多功能。
+IcePatch 分别结合了 Magisk 方便易用的通过 `boot.img` 安装的方法，和 KernelSU 强大的内核修补能力。
 
-## APatch 与 Magisk 的区别？
+## IcePatch 与 Magisk 的区别？
 
-Magisk 对启动映像中的 `ramdisk` 进行补丁，以修改 `init` 系统。而 APatch 则直接修补 Android 内核。
+Magisk 对启动映像中的 `ramdisk` 进行补丁，以修改 `init` 系统。而 IcePatch 则直接修补 Android 内核。
 
-## APatch 与 KernelSU 的区别？
+## IcePatch 与 KernelSU 的区别？
 
-KernelSU 需要您设备的内核的源代码，而 OEM 并不总是提供该源码。而 APatch 仅需要您的设备原本的`boot.img`。
+KernelSU 需要您设备的内核的源代码，而 OEM 并不总是提供该源码。而 IcePatch 仅需要您的设备原本的`boot.img`。
 
-## APatch 与 Magisk、KernelSU 的区别？
+## IcePatch 与 Magisk、KernelSU 的区别？
 
-APatch 可选择不修改 SELinux，这意味着 Android 应用程序线程可以被 root，无需 `libsu` 和 `IPC` 。
+IcePatch 可选择不修改 SELinux，这意味着 Android 应用程序线程可以被 root，无需 `libsu` 和 `IPC` 。
 
-APatch 提供 **KernelPatch Module（KP模块）**。
+IcePatch 提供 **KernelPatch Module（KP模块）**。
 
 ## 什么是 KernelPatch Module（KP模块）？
 
@@ -33,9 +33,9 @@ KPM 是一种运行在内核空间内的模块，可以让代码运行在内核�
 
 更多相关信息，请参阅[如何编写KPM](https://github.com/bmax121/KernelPatch/blob/main/doc/zh-CN/module.md)。
 
-## APatch 与 KernelPatch 的关系
+## IcePatch 与 KernelPatch 的关系
 
-APatch 依赖于 KernelPatch，继承了其所有功能并进行了扩展。
+IcePatch 依赖于 KernelPatch，继承了其所有功能并进行了扩展。
 
 您可以仅安装 KernelPatch，但如此将不允许您使用 APM。
 
@@ -51,13 +51,13 @@ KernelPatch 添加了一个新的系统调用（syscall），为应用程序和�
 
 KernelPatch 不修改 SELinux 上下文，而是通过 hook 绕过 SELinux。 这允许您在应用程序上下文中 root Android 线程，无需使用 `libsu` 启动新进程，然后执行 `IPC` 。这非常方便。
 
-此外，APatch 直接利用 `magiskpolicy` 提供额外的 SELinux 支持。  
+此外，IcePatch 直接利用 `magiskpolicy` 提供额外的 SELinux 支持。  
 
-## APatch 的模块 WebUI
+## IcePatch 的模块 WebUI
 
-APatch 的源代码来自于 KernelSU，因此 KernelSU 引入 WebUI 特性之后，APatch 也在 [10568](https://github.com/bmax121/APatch/releases/tag/10568) 版本中引入了 WebUI 特性。
+IcePatch 的源代码来自于 KernelSU，因此 KernelSU 引入 WebUI 特性之后，IcePatch 也在 [10568](https://github.com/Anatdx/IcePatch/releases/tag/10568) 版本中引入了 WebUI 特性。
 
-APatch 的 WebUI 实现方法和要求和 KernelSU 的实现方法和要求完全一致，为 KernelSU 模块设计的 WebUI 在 APatch 中可以完美运行。
+IcePatch 的 WebUI 实现方法和要求和 KernelSU 的实现方法和要求完全一致，为 KernelSU 模块设计的 WebUI 在 IcePatch 中可以完美运行。
 
 如果你希望为 APM 或 KPM 设计 WebUI，请参考 KernelSU 的 [WebUI 介绍页面](https://kernelsu.org/zh_CN/guide/module-webui.html) 进行设计。
 
@@ -65,7 +65,7 @@ APatch 的 WebUI 实现方法和要求和 KernelSU 的实现方法和要求完�
 
 在 root 授权页面取消 shell 的 root 权限。
 
-## 安装的模块在升级到 10997 及以后版本的 APatch 后消失？
+## 安装的模块在升级到 10997 及以后版本的 IcePatch 后消失？
 
 对 CI build 10977 及以后版本的特别说明
 
@@ -73,7 +73,7 @@ APatch 的 WebUI 实现方法和要求和 KernelSU 的实现方法和要求完�
 我们曾经在 [其他注意事项](/zh_CN/update#Miscellaneous) 中提醒过类似情况。
 :::
 
-APatch 在提交 [b843480](https://github.com/bmax121/APatch/commit/b843480c4f56b6190add41366e3eb7148ebc9b87) 之后放弃了对 `module.img` 的支持，所以任何在此 版本之前的 APatch 实例中安装的 APM 在升级到 `10977` 及其后续版本后都将**彻底 丢失**。
+IcePatch 在提交 [b843480](https://github.com/Anatdx/IcePatch/commit/b843480c4f56b6190add41366e3eb7148ebc9b87) 之后放弃了对 `module.img` 的支持，所以任何在此 版本之前的 IcePatch 实例中安装的 APM 在升级到 `10977` 及其后续版本后都将**彻底 丢失**。
 
 你将需要重新安装你以前安装的所有 APM.
 
@@ -83,11 +83,11 @@ APatch 在提交 [b843480](https://github.com/bmax121/APatch/commit/b843480c4f56
 
 ## 能使用 LSPosed 吗？
 
-LSPosed 依赖于 Riru 或 Zygisk，APatch 默认情况下并不附带对 Riru 或 Zygisk 的支持，因此 APatch 无法直接使用 LSPosed。
+LSPosed 依赖于 Riru 或 Zygisk，IcePatch 默认情况下并不附带对 Riru 或 Zygisk 的支持，因此 IcePatch 无法直接使用 LSPosed。
 
-但是，APatch 可以通过安装 APM 的形式来添加对 Zygisk 的支持或者允许 LSPosed 在没有 Zygisk 的情况下运行。
+但是，IcePatch 可以通过安装 APM 的形式来添加对 Zygisk 的支持或者允许 LSPosed 在没有 Zygisk 的情况下运行。
 
-下面是两种在 APatch 中使用 LSPosed 的解决方案：
+下面是两种在 IcePatch 中使用 LSPosed 的解决方案：
 
 1. 参考 [Zygisk 支持？](#zygisk-support) 部分以添加对 Zygisk 的支持。
 2. 如果你只需要使用 LSPosed 而无需其它 Zygisk 功能，也可以使用 [Zloader](https://github.com/Mufanc/z-loader) 的 [LSPosed 专版](https://t.me/mufanc_chan/28) 以实现单独加载 LSPosed。
@@ -106,18 +106,18 @@ Zloader 在版本 `0.1.3` 以后没有任何新版本发布和代码提交。
 
 Shamiko 是专有软件，我们无法适配。
 ::: danger
-**APatch 开发者将不对任何因使用 Shamiko 导致的问题承担任何责任，你需要自行承担使用风险。**
+**IcePatch 开发者将不对任何因使用 Shamiko 导致的问题承担任何责任，你需要自行承担使用风险。**
 :::
 
 ## Zygisk 支持？ {#zygisk-support}
 
-APatch 和 KernelSU 保持一致，默认不附带对 Zygisk 的支持。
+IcePatch 和 KernelSU 保持一致，默认不附带对 Zygisk 的支持。
 
-在社区的广泛努力下，现在有一些 APM 或 APatch 兼容的 Magisk 模块可以为 APatch 引入 Zygisk。以下是一些常用于引入 Zygisk 的 APM。
+在社区的广泛努力下，现在有一些 APM 或 IcePatch 兼容的 Magisk 模块可以为 IcePatch 引入 Zygisk。以下是一些常用于引入 Zygisk 的 APM。
 
-- [ZygiskNext](https://github.com/Dr-TSNG/ZygiskNext): 最早是为 KernelSU 提供 Zygisk 环境的 APM，功能最为完善，是对 Zygisk API 的完整实现，同时在此基础上提供了一些额外特性。版本 `0.9.1.1` 及之前是自由软件，在此之后则为专有软件。该 APM 明确适配 APatch 的起始版本为 `1.0.3`。
+- [ZygiskNext](https://github.com/Dr-TSNG/ZygiskNext): 最早是为 KernelSU 提供 Zygisk 环境的 APM，功能最为完善，是对 Zygisk API 的完整实现，同时在此基础上提供了一些额外特性。版本 `0.9.1.1` 及之前是自由软件，在此之后则为专有软件。该 APM 明确适配 IcePatch 的起始版本为 `1.0.3`。
 
-- [Zygisk_mod](https://github.com/Admirepowered/Zygisk_mod): 在 ZygiskNext 尚未适配 APatch 之前，该 APM 用于为 APatch 提供 Zygisk 环境。在 ZygiskNext 适配 APatch 之后，该 APM 随之停止更新并归档。
+- [Zygisk_mod](https://github.com/Admirepowered/Zygisk_mod): 在 ZygiskNext 尚未适配 IcePatch 之前，该 APM 用于为 IcePatch 提供 Zygisk 环境。在 ZygiskNext 适配 IcePatch 之后，该 APM 随之停止更新并归档。
 
 - [ReZygisk](https://github.com/PerformanC/ReZygisk): ZygiskNext 在成为专有软件后出现的一个自由的提供 Zygisk 环境的 APM，仍处于早期开发阶段，部分 ZygiskNext 的专有特性在此 APM 中不受支持。
 
@@ -126,9 +126,9 @@ APatch 和 KernelSU 保持一致，默认不附带对 Zygisk 的支持。
 你可以在以上几个 Zygisk 实现中任选其一，或使用你自己的 Zygisk 实现。
 
 ::: warning
-正如我们上面所说，APatch 默认不附带对 Zygisk 的内建支持，所以我们无法保证上述几种方案的可用性、适用性、稳定性等，也无法提供其它任何意义上的担保。
+正如我们上面所说，IcePatch 默认不附带对 Zygisk 的内建支持，所以我们无法保证上述几种方案的可用性、适用性、稳定性等，也无法提供其它任何意义上的担保。
 
-如果你在将 APatch 和其它任何 Zygisk 实现方案和/或任何依赖于 Zygisk 的 APM 一同使用时遇到了问题，**不要**直接向我们提交问题反馈，请优先考虑向这些 APM 的作者提交反馈。
+如果你在将 IcePatch 和其它任何 Zygisk 实现方案和/或任何依赖于 Zygisk 的 APM 一同使用时遇到了问题，**不要**直接向我们提交问题反馈，请优先考虑向这些 APM 的作者提交反馈。
 :::
 
 ## Root 检测软件无法通过？

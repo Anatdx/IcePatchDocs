@@ -8,7 +8,7 @@
 
 2. [NECESSÁRIO ROOT] Você pode executar o comando `zcat /proc/config.gz | grep CONFIG_KALLSYMS` no terminal para garantir que seu kernel suporta o patch. Se estiver usando ADB, primeiro mude para o modo terminal digitando `adb shell`.
 
-3. [Clique aqui](https://github.com/bmax121/APatch/releases) para obter a versão estável mais recente do APatch.
+3. [Clique aqui](https://github.com/Anatdx/IcePatch/releases) para obter a versão estável mais recente do IcePatch.
 
 4. Extraia o `boot.img` de sua ROM ou de outra fonte que contenha o `boot.img` stock do seu dispositivo. Você precisará dele mais tarde para fazer o patch.
 
@@ -17,14 +17,14 @@
 ::: tip DICA
 1. Certifique-se de usar as ferramentas ADB e fastboot mais recentes e ter conhecimento sobre elas para prosseguir para a próxima etapa. Se você ainda não aprendeu sobre elas, recomendamos pesquisar para aprender sobre elas primeiro.
 
-2. APatch sempre corrige o `boot.img` de qualquer dispositivo. Não tente corrigir ou flashar o `init_boot` ou outros arquivos de imagem de partição. Os desenvolvedores do APatch não são responsáveis ​​pela falha do patch e da inicialização resultantes.
+2. IcePatch sempre corrige o `boot.img` de qualquer dispositivo. Não tente corrigir ou flashar o `init_boot` ou outros arquivos de imagem de partição. Os desenvolvedores do IcePatch não são responsáveis ​​pela falha do patch e da inicialização resultantes.
 
 3. Evite usar o arquivo `boot.img` que foi corrigido por outros gerenciadores para evitar situações inesperadas.
 :::
 
 ## Requisitos de instalação
 
-Os requisitos de instalação do APatch são principalmente refletidos na configuração do kernel. Aqui estão os requisitos do kernel:
+Os requisitos de instalação do IcePatch são principalmente refletidos na configuração do kernel. Aqui estão os requisitos do kernel:
 
 ```txt
 CONFIG_KALLSYMS=y
@@ -56,20 +56,20 @@ O kernel 6.6 foi testado apenas em dispositivos Xiaomi e OnePlus. Para dispositi
 
 ## Patch {#how-to-patch}
 
-Existem várias maneiras de corrigir o APatch.
+Existem várias maneiras de corrigir o IcePatch.
 
 ### Patch automático {#automatically-patching}
 
-1. Baixe a versão mais recente do APatch no [GitHub](https://github.com/bmax121/APatch/releases).
+1. Baixe a versão mais recente do IcePatch no [GitHub](https://github.com/Anatdx/IcePatch/releases).
 
-2. Clique no botão ![Patch Button](/PButton.png) no canto superior direito, depois em `Selecionar imagem boot para patch`.
+2. Clique no botão ![Patch Button](./PButton.png) no canto superior direito, depois em `Selecionar imagem boot para patch`.
 
 3. Selecione seu `boot.img`.
 
 4. Defina uma SuperKey no cartão "SuperKey". A SuperKey deve ter de **8 a 63 caracteres e incluir números e letras, mas sem caracteres especiais**. Ela será usada posteriormente para desbloquear privilégios root.
 
 ::: warning AVISO
-É estritamente proibido definir chaves fracas como `12345678`. As versões mais recentes do APatch [obriga o uso de chaves fortes](/pt_BR/warn).
+É estritamente proibido definir chaves fracas como `12345678`. As versões mais recentes do IcePatch [obriga o uso de chaves fortes](/pt_BR/warn).
 :::
 
 5. Clique em "Iniciar" e aguarde um momento. Depois que o patch for bem-sucedido, o caminho do `boot.img` corrigido será exibido. Por exemplo: `/storage/emulated/0/Download/apatch_version_version_randomletter.img`.
@@ -78,7 +78,7 @@ Finalmente, você pode fazer o [Flash](/pt_BR/install#flash) conforme necessári
 
 ### Patch manual
 
-Quando o KernelPatch é atualizado e o gerenciador do APatch permanece inalterado, você pode optar por fazer o patch manualmente do kernel.
+Quando o KernelPatch é atualizado e o gerenciador do IcePatch permanece inalterado, você pode optar por fazer o patch manualmente do kernel.
 
 Você pode ir até o projeto [KernelPatch](https://github.com/bmax121/KernelPatch/releases) para obter os arquivos `KP` mais recentes.
 
@@ -155,7 +155,7 @@ Você pode digitar o parâmetro `--help`, ou seja, `kptools --help`, para obter 
 # Comandos e comentários do KP
 
 ::: info INFORMAÇÕES
-Você pode clicar [aqui](https://exame.apatch.top/) para experimentar.
+Você pode clicar [aqui](https://exame.icepatch.anatdx.com/) para experimentar.
 :::
 
 ```
@@ -218,24 +218,24 @@ fastboot reboot
 
 ### Flashando diretamente
 
-A versão mais recente do APatch suporta flash direto por meio de Recovery de terceiros, como o TWRP.
+A versão mais recente do IcePatch suporta flash direto por meio de Recovery de terceiros, como o TWRP.
 
 ::: warning AVISO
-O flash direto foi introduzido pela primeira vez na versão `10888`, e versões anteriores do APatch **NÃO** suportam este método.
+O flash direto foi introduzido pela primeira vez na versão `10888`, e versões anteriores do IcePatch **NÃO** suportam este método.
 :::
 
-Altere o sufixo do arquivo APatch de `.apk` para `.zip`. Por exemplo:
+Altere o sufixo do arquivo IcePatch de `.apk` para `.zip`. Por exemplo:
 
 ```
 [username@localhost Demo] $ ls
-APatch-10888-release.apk
-[username@localhost Demo] $ mv APatch-10888-release.apk APatch-10888-release.zip
+IcePatch-10888-release.apk
+[username@localhost Demo] $ mv IcePatch-10888-release.apk IcePatch-10888-release.zip
 [username@localhost Demo] $ ls
-APatch-10888-release.zip
+IcePatch-10888-release.zip
 [username@localhost Demo] $ 
 ```
 
-Depois de feito isso, você pode fazer o flash deste arquivo `.zip` por meio da função Flash do Recovery de terceiros. O APatch será instalado automaticamente, assim como o Magisk.
+Depois de feito isso, você pode fazer o flash deste arquivo `.zip` por meio da função Flash do Recovery de terceiros. O IcePatch será instalado automaticamente, assim como o Magisk.
 
 ::: tip DICA
 Assim como a função Flash, o comando `adb sideload` usado pelo Recovery fornecido por ROMs semelhantes a AOSP de terceiros também é suportado.
@@ -243,7 +243,7 @@ Assim como a função Flash, o comando `adb sideload` usado pelo Recovery fornec
 
 ::: warning AVISO
 O flash direto **NÃO** é compatível com a personalização da SuperKey! Em vez disso, a SuperKey será definida como uma combinação de números e letras aleatórias.
-Se você precisar personalizar a SuperKey, acesse o APatch após a inicialização e faça um repatch para redefini-la.
+Se você precisar personalizar a SuperKey, acesse o IcePatch após a inicialização e faça um repatch para redefini-la.
 :::
 
 ## Desinstalar
@@ -251,21 +251,21 @@ Se você precisar personalizar a SuperKey, acesse o APatch após a inicializaç�
 ### Desinstalar automaticamente
 
 ::: warning AVISO
-A desinstalação automática foi introduzida pela primeira vez na versão `10888`, e versões anteriores do APatch **NÃO** suportam este método.
+A desinstalação automática foi introduzida pela primeira vez na versão `10888`, e versões anteriores do IcePatch **NÃO** suportam este método.
 :::
 
-Altere o sufixo do arquivo APatch de `.apk` para `.zip` e adicione o nome do arquivo modificado a qualquer coisa com `uninstall`. Por exemplo:
+Altere o sufixo do arquivo IcePatch de `.apk` para `.zip` e adicione o nome do arquivo modificado a qualquer coisa com `uninstall`. Por exemplo:
 
 ```
 [username@localhost Demo] $ ls
-APatch-10888-release.apk
-[username@localhost Demo] $ mv APatch-10888-release.apk APatch-10888-release-uninstall.zip
+IcePatch-10888-release.apk
+[username@localhost Demo] $ mv IcePatch-10888-release.apk IcePatch-10888-release-uninstall.zip
 [username@localhost Demo] $ ls
-APatch-10888-release-uninstall.zip
+IcePatch-10888-release-uninstall.zip
 [username@localhost Demo] $ 
 ```
 
-Depois de feito isso, você pode fazer o flash deste arquivo `.zip` por meio da função Flash do Recovery de terceiros. O APatch será removido automaticamente, assim como o Magisk.
+Depois de feito isso, você pode fazer o flash deste arquivo `.zip` por meio da função Flash do Recovery de terceiros. O IcePatch será removido automaticamente, assim como o Magisk.
 
 ::: tip DICA
 Assim como a função Flash, o comando `adb sideload` usado pelo Recovery fornecido por ROMs semelhantes a AOSP de terceiros também é suportado.

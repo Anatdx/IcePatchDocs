@@ -4,7 +4,7 @@
 
 ---
 
-APatch depende do KernelPatch, herdando todas as suas funcionalidades e expandindo suas capacidades. Portanto, o APatch também oferece suporte ao KPMódulo (KPM). A seguir, apresentamos uma introdução sobre o uso do KPMódulo.
+IcePatch depende do KernelPatch, herdando todas as suas funcionalidades e expandindo suas capacidades. Portanto, o IcePatch também oferece suporte ao KPMódulo (KPM). A seguir, apresentamos uma introdução sobre o uso do KPMódulo.
 
 ## O que é KPMódulo?
 
@@ -15,14 +15,14 @@ O KPMódulo (KPM) é um tipo de módulo que permite que o código seja executado
 Existem 3 maneiras de usar o KPMódulo: Incorporar, Carregar e Instalar.
 
 ::: tip SOBRE "INSTALAR"
-Atualmente, o APatch não implementou a função "Instalar" para KPMs, e você só pode usar KPMs via "Incorporar" ou "Carregar". Os desenvolvedores do KernelPatch e do APatch estão trabalhando rapidamente para implementar a função "Instalar". Por favor, espere pacientemente.
+Atualmente, o IcePatch não implementou a função "Instalar" para KPMs, e você só pode usar KPMs via "Incorporar" ou "Carregar". Os desenvolvedores do KernelPatch e do IcePatch estão trabalhando rapidamente para implementar a função "Instalar". Por favor, espere pacientemente.
 :::
 
 ### Incorporar
 
 `Incorporar` é uma função que incorpora KPMs diretamente no `kernel`. KPMs instalados desta forma serão mesclados com o `kernel` corrigido no `boot.img`, e serão carregados no estágio de inicialização `pre-kernel-init`.
 
-A incorporação de KPMs pode ser feita tanto na primeira aplicação do patch no `boot.img` quanto após a instalação do APatch.
+A incorporação de KPMs pode ser feita tanto na primeira aplicação do patch no `boot.img` quanto após a instalação do IcePatch.
 
 #### Incorporar KPMs no primeiro patch {#embed-kpms-at-first-patching}
 
@@ -34,9 +34,9 @@ A incorporação de KPMs pode ser feita tanto na primeira aplicação do patch n
 
 4. Complete as etapas restantes do guia "Patch automático" e pronto!
 
-#### Incorporar KPMs após a instalação do APatch
+#### Incorporar KPMs após a instalação do IcePatch
 
-Após instalar o APatch, a forma de incorporar os KPMs é familiar à instalação de APMs. Você pode clicar no botão no canto inferior direito e escolher "Incorporar". Os passos restantes podem ser consultados em [Incorporar KPMs no primeiro patch](/pt_BR/kpm-usage-guide#embed-kpms-at-first-patching).
+Após instalar o IcePatch, a forma de incorporar os KPMs é familiar à instalação de APMs. Você pode clicar no botão no canto inferior direito e escolher "Incorporar". Os passos restantes podem ser consultados em [Incorporar KPMs no primeiro patch](/pt_BR/kpm-usage-guide#embed-kpms-at-first-patching).
 
 ### Carregar
 
@@ -47,7 +47,7 @@ A forma de carregar os KPMs é familiar à instalação de APMs, a única difere
 ### Instalar
 
 ::: tip ATENÇÃO
-KernelPatch e APatch ainda não implementaram a função "Instalar" para KPMs. Todas as descrições abaixo são especulativas e descrevem o comportamento esperado da opção "Instalar" para KPMs.
+KernelPatch e IcePatch ainda não implementaram a função "Instalar" para KPMs. Todas as descrições abaixo são especulativas e descrevem o comportamento esperado da opção "Instalar" para KPMs.
 :::
 
 `Instalar` é uma função que permite instalar KPMs de forma semelhante aos arquivos APMs, em diretórios como `/data/adb/kpmodules` ou qualquer diretório semelhante. KPMs instalados dessa maneira podem ser carregados durante eventos especiais.

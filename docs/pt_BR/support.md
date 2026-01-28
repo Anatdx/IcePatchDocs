@@ -6,12 +6,12 @@
 
 ## Projetos
 
-[APatch](https://github.com/bmax121/APatch)
+[IcePatch](https://github.com/Anatdx/IcePatch)
 
 [KernelPatch](https://github.com/bmax121/KernelPatch)
 
 ## Discussão
 
-[[ZH/EN] [SFW] APatch Discussions](https://t.me/apatch_discuss)
+[[ZH/EN] [SFW] IcePatch Discussions](https://t.me/apatch_discuss)
 
-[[SFW] APatch CN](https://t.me/APatch_CN_Group) (Apenas para usuários chineses)
+[[SFW] IcePatch CN](https://t.me/IcePatch_CN_Group) (Apenas para usuários chineses)

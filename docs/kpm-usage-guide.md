@@ -4,7 +4,7 @@
 
 ---
 
-APatch relies on KernelPatch, inheriting all its functionalities and expanding its capabilities. Therefore, APatch also supports KernelPatch Modules (KPM). Below is an introduction about using KPMs.
+IcePatch relies on KernelPatch, inheriting all its functionalities and expanding its capabilities. Therefore, IcePatch also supports KernelPatch Modules (KPM). Below is an introduction about using KPMs.
 
 ## What is KPM?
 
@@ -15,14 +15,14 @@ KernelPatch Modules (KPM) is a type of module that allows code to run in kernel 
 There are 3 ways to use KPM: Embed, Load, and Install.
 
 ::: tip ABOUT "INSTALL"
-Currently, APatch hasn't implemented the "Install" function for KPMs, and you can only use KPMs via "Embed" or "Load". KernelPatch and APatch's developers are working quickly to implement the "Install" function. Please wait patiently.
+Currently, IcePatch hasn't implemented the "Install" function for KPMs, and you can only use KPMs via "Embed" or "Load". KernelPatch and IcePatch's developers are working quickly to implement the "Install" function. Please wait patiently.
 :::
 
 ### Embed
 
 `Embed` is a function that embeds KPMs directly into the `kernel`. KPMs installed by this way will be merged together with patched `kernel` into `boot.img`, and will be loaded at the boot stage `pre-kernel-init`.
 
-The Embed of KPMs can be done both at first patching `boot.img` and after installation of APatch.
+The Embed of KPMs can be done both at first patching `boot.img` and after installation of IcePatch.
 
 #### Embed KPMs at first patching {#embed-kpms-at-first-patching}
 
@@ -34,9 +34,9 @@ The Embed of KPMs can be done both at first patching `boot.img` and after instal
 
 4. Complete the remaining steps of the "Automatically patching" guide, and you're done.
 
-#### Embed KPMs after installation of APatch
+#### Embed KPMs after installation of IcePatch
 
-After installing APatch, the way of embedding KPMs is familiar to installing APMs. You can click the button in the lower right corner and choose "Embed". The remaining steps can be referred to in [Embed KPMs at first patching](/kpm-usage-guide#embed-kpms-at-first-patching).
+After installing IcePatch, the way of embedding KPMs is familiar to installing APMs. You can click the button in the lower right corner and choose "Embed". The remaining steps can be referred to in [Embed KPMs at first patching](/kpm-usage-guide#embed-kpms-at-first-patching).
 
 ### Load
 
@@ -47,7 +47,7 @@ The way of load KPMs is familiar to installing APMs, with the only difference be
 ### Install
 
 ::: tip ATTENTION
-KernelPatch and APatch haven't yet implemented the "Install" function for KPMs. All descriptions below are speculative and describe the expected behavior of "Install" option for KPMs.
+KernelPatch and IcePatch haven't yet implemented the "Install" function for KPMs. All descriptions below are speculative and describe the expected behavior of "Install" option for KPMs.
 :::
 
 `Install` is a function that allows you to install KPMs similarly to APM files, in directories like `/data/adb/kpmodules` or any similar directories. KPMs installed by this way can be loaded during special events.

@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "APatch"
+  name: "IcePatch"
   text: "安卓内核 Root 新方案"
   tagline: 为 Android 内核 3.18 - 6.6 版本提供的通用 root 方案
   image:
@@ -15,14 +15,14 @@ hero:
       link: /zh_CN/what-is-apatch
     - theme: alt
       text: 在 GitHub 中查看
-      link: https://github.com/bmax121/APatch
+      link: https://github.com/Anatdx/IcePatch
     - theme: alt
       text: 贡献文档
-      link: https://github.com/AndroidPatch/APatchDocs
+      link: https://github.com/AndroidPatch/IcePatchDocs
 
 features:
   - title: 基于内核
-    details: APatch 运行在内核空间，相比用户空间 Root 有更强的隐蔽性和掌控性。
+    details: IcePatch 运行在内核空间，相比用户空间 Root 有更强的隐蔽性和掌控性。
   - title: 白名单访问控制
     details: 只有被授权的 App 才可以访问 su，而其他 App 无法感知其存在。
   - title: APM

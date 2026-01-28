@@ -2,25 +2,25 @@
 
 [[toc]]
 
-## What is APatch?
+## What is IcePatch?
 
 ::: info
 [There](/what-is-apatch) is a more complete introduction.
 :::
 
-APatch is a root solution similar to Magisk or KernelSU that combines the best of both. It combines Magisk easy and convenient installation method via `boot.img` with KernelSU powerful kernel patching abilities.
+IcePatch is a root solution similar to Magisk or KernelSU that combines the best of both. It combines Magisk easy and convenient installation method via `boot.img` with KernelSU powerful kernel patching abilities.
 
-## What is the difference between APatch and Magisk?
+## What is the difference between IcePatch and Magisk?
 
-Magisk modifies the `init` system with a patch to the `ramdisk` of your boot image. APatch patches the kernel directly.
+Magisk modifies the `init` system with a patch to the `ramdisk` of your boot image. IcePatch patches the kernel directly.
 
-## What is the difference between APatch and KernelSU?
+## What is the difference between IcePatch and KernelSU?
 
-While KernelSU requires your device's kernel source code, which isn't always provided by the OEM, APatch only need your stock `boot.img`.
+While KernelSU requires your device's kernel source code, which isn't always provided by the OEM, IcePatch only need your stock `boot.img`.
 
-## What is the difference between APatch, Magisk, and KernelSU?
+## What is the difference between IcePatch, Magisk, and KernelSU?
 
-APatch optionally allows not modifying SELinux. This means that the app's thread can be rooted without the need for `libsu` and `IPC`.
+IcePatch optionally allows not modifying SELinux. This means that the app's thread can be rooted without the need for `libsu` and `IPC`.
 
 **KPModule** provided.
 
@@ -32,9 +32,9 @@ Additionally, the KPM provides the ability to execute `inline-hook` and `syscall
 
 For more information, see [how to write KPM](https://github.com/bmax121/KernelPatch/blob/main/doc/zh-CN/module.md).
 
-## What is the relationship between APatch and KernelPatch?
+## What is the relationship between IcePatch and KernelPatch?
 
-APatch relies on KernelPatch, inheriting all of its capabilities and expanding on them.
+IcePatch relies on KernelPatch, inheriting all of its capabilities and expanding on them.
 
 You can install only KernelPatch, but this doesn't allow you to use APM.
 
@@ -48,13 +48,13 @@ KernelPatch adds a new system call (syscall) to provide all resources for apps a
 
 KernelPatch doesn't modify the SELinux context but bypasses it via hook. This allows you to root a thread on Android within an app's context, without the need to use `libsu` to start a new process and execute `IPC`.
 
-Additionally, APatch directly uses `magiskpolicy` to provide additional support for SELinux. 
+Additionally, IcePatch directly uses `magiskpolicy` to provide additional support for SELinux. 
 
 ## WebUI of APM/KPM
 
-The APatch source code has been derived and modified from KernelSU, and APatch introduced the WebUI feature in version [10568](https://github.com/bmax121/APatch/releases/tag/10568), after KernelSU did the same.
+The IcePatch source code has been derived and modified from KernelSU, and IcePatch introduced the WebUI feature in version [10568](https://github.com/Anatdx/IcePatch/releases/tag/10568), after KernelSU did the same.
 
-APatch WebUI implementation and requirements is completely same as KernelSU, WebUI designed for KernelSU modules can run perfectly in APatch.
+IcePatch WebUI implementation and requirements is completely same as KernelSU, WebUI designed for KernelSU modules can run perfectly in IcePatch.
 
 If you want to design WebUI for APM or KPM, refer to the [WebUI introduction](https://kernelsu.org/guide/module-webui.html) from KernelSU for more information.
 
@@ -62,7 +62,7 @@ If you want to design WebUI for APM or KPM, refer to the [WebUI introduction](ht
 
 Remove the root privilege from the "Shell" app in Superuser page.
 
-## The installed modules disappear after updating to version 10997 of APatch and in subsequent versions
+## The installed modules disappear after updating to version 10997 of IcePatch and in subsequent versions
 
 Special notes about CI build after version 10977.
 
@@ -70,7 +70,7 @@ Special notes about CI build after version 10977.
 We've noticed this issue in [Miscellaneous](update#miscellaneous) before.
 :::
 
-APatch has dropped support to `module.img` since commit [b843480](https://github.com/bmax121/APatch/commit/b843480c4f56b6190add41366e3eb7148ebc9b87). Therefore, any APModule installed in previous versions will be **COMPLETELY LOST** after updating to version `10977` or later.
+IcePatch has dropped support to `module.img` since commit [b843480](https://github.com/Anatdx/IcePatch/commit/b843480c4f56b6190add41366e3eb7148ebc9b87). Therefore, any APModule installed in previous versions will be **COMPLETELY LOST** after updating to version `10977` or later.
 
 You will need to reinstall all APModules that were installed previously.
 
@@ -80,11 +80,11 @@ This issue should already be resolved. However, if you're still experiencing the
 
 ## Can I use LSPosed?
 
-LSPosed relies on Riru or Zygisk to run. However, APatch doesn't support Riru or Zygisk by default, so you cannot use LSPosed directly.
+LSPosed relies on Riru or Zygisk to run. However, IcePatch doesn't support Riru or Zygisk by default, so you cannot use LSPosed directly.
 
-However, APatch can add the Zygisk support or allow LSPosed run without any Zygisk implementation, through the installation of APMs.
+However, IcePatch can add the Zygisk support or allow LSPosed run without any Zygisk implementation, through the installation of APMs.
 
-Here are two solutions for running LSPosed on APatch:
+Here are two solutions for running LSPosed on IcePatch:
 
 1. Refer to [Zygisk support?](#zygisk-support) section to add Zygisk support.
 2. If you only need to use LSPosed without other Zygisk features, you can try [Zloader](https://github.com/Mufanc/z-loader) [for LSPosed](https://t.me/mufanc_chan/28).
@@ -104,18 +104,18 @@ We no longer recommends using this method. Please consider using Zygisk instead.
 We cannot support Shamiko due to its proprietary.
 
 ::: danger
-**Any issues caused by using Shamiko will not be supported by APatch developers. Use at your own risk.**
+**Any issues caused by using Shamiko will not be supported by IcePatch developers. Use at your own risk.**
 :::
 
 ## Zygisk support? {#zygisk-support}
 
-Same as KernelSU, APatch doesn't have built-in Zygisk support.
+Same as KernelSU, IcePatch doesn't have built-in Zygisk support.
 
-Thanks to the community's efforts, several APMs or Magisk modules are now available that are compatible with APatch and allow you to add support for Zygisk. Below are some APMs that provide Zygisk support for APatch:
+Thanks to the community's efforts, several APMs or Magisk modules are now available that are compatible with IcePatch and allow you to add support for Zygisk. Below are some APMs that provide Zygisk support for IcePatch:
 
-- [ZygiskNext](https://github.com/Dr-TSNG/ZygiskNext): The first APM to provide a Zygisk environment for KernelSU, supporting the most comprehensive functions. It's a full implementation of Zygisk API, including additional features, both based on Zygisk and outside of it. Version `0.9.1.1` and all previous versions are open-source, while versions after this became proprietary. This APM initially supports APatch at version `1.0.3`.
+- [ZygiskNext](https://github.com/Dr-TSNG/ZygiskNext): The first APM to provide a Zygisk environment for KernelSU, supporting the most comprehensive functions. It's a full implementation of Zygisk API, including additional features, both based on Zygisk and outside of it. Version `0.9.1.1` and all previous versions are open-source, while versions after this became proprietary. This APM initially supports IcePatch at version `1.0.3`.
 
-- [Zygisk_mod](https://github.com/Admirepowered/Zygisk_mod): Before ZygiskNext officially supports APatch, this APM was set to provide a Zygisk environment for APatch. With ZygiskNext now offering official support, Zygisk_mod has been discontinued, but it's still available.
+- [Zygisk_mod](https://github.com/Admirepowered/Zygisk_mod): Before ZygiskNext officially supports IcePatch, this APM was set to provide a Zygisk environment for IcePatch. With ZygiskNext now offering official support, Zygisk_mod has been discontinued, but it's still available.
 
 - [ReZygisk](https://github.com/PerformanC/ReZygisk): A free Zygisk implementation appeared after ZygiskNext become proprietary. Still in early development, this APM doesn't support some features present in ZygiskNext.
 
@@ -124,9 +124,9 @@ Thanks to the community's efforts, several APMs or Magisk modules are now availa
 You can choose one of Zygisk implementations above, or use your own Zygisk implementation.
 
 ::: warning
-As we said above, APatch **DOES NOT** have built-in Zygisk support, so we **CAN NOT** and **WILL NOT** guarantee the availability, functionality, stability, or any other responsibilities related to elements of Zygisk. 
+As we said above, IcePatch **DOES NOT** have built-in Zygisk support, so we **CAN NOT** and **WILL NOT** guarantee the availability, functionality, stability, or any other responsibilities related to elements of Zygisk. 
 
-If you encounter issues using APatch with any Zygisk implementation or Zygisk-dependent modules, **DO NOT** report your bug directly to us, report bug to the developer(s) of the APM first instead.
+If you encounter issues using IcePatch with any Zygisk implementation or Zygisk-dependent modules, **DO NOT** report your bug directly to us, report bug to the developer(s) of the APM first instead.
 :::
 
 ## The root detection software fails

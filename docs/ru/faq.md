@@ -1,24 +1,24 @@
 # Частые вопросы
 
-## Что такое APatch?
+## Что такое IcePatch?
 
 ::: info
 [Здесь](/ru/what-is-apatch) вы можете найти более полную информацию.
 :::
 
-APatch - это root-решение, похожее на Magisk или KernelSU и являющееся одним из лучших. Оно сочетает в себе простой и удобный метод установки через `boot.img` как у Magisk, и мощные возможности KernelSU по работе на уровне ядра.
+IcePatch - это root-решение, похожее на Magisk или KernelSU и являющееся одним из лучших. Оно сочетает в себе простой и удобный метод установки через `boot.img` как у Magisk, и мощные возможности KernelSU по работе на уровне ядра.
 
-## В чем разница между APatch и Magisk?
+## В чем разница между IcePatch и Magisk?
 
-Magisk изменяет систему `init` с помощью патча `ramdisk` вашего загрузочного образа. APatch же патчит ядро напрямую.
+Magisk изменяет систему `init` с помощью патча `ramdisk` вашего загрузочного образа. IcePatch же патчит ядро напрямую.
 
-## В чем разница между APatch и KernelSU?
+## В чем разница между IcePatch и KernelSU?
 
-KernelSU требует исходный код ядра вашего устройства, который не всегда предоставляется OEM-производителем (вендором). APatch же требует лишь ваш изначальный `boot.img`.
+KernelSU требует исходный код ядра вашего устройства, который не всегда предоставляется OEM-производителем (вендором). IcePatch же требует лишь ваш изначальный `boot.img`.
 
-## В чем разница между APatch, Magisk и KernelSU?
+## В чем разница между IcePatch, Magisk и KernelSU?
 
-APatch позволяет опционально не изменять SELinux, что означает, что поток приложения может получать root-права без `libsu` и `IPC`.
+IcePatch позволяет опционально не изменять SELinux, что означает, что поток приложения может получать root-права без `libsu` и `IPC`.
 
 Так же есть модули ядра - **KPModule**.
 
@@ -30,11 +30,11 @@ APatch позволяет опционально не изменять SELinux, 
 
 Пожалуйста, прочтите [как написать KPM](https://github.com/bmax121/KernelPatch/blob/main/doc/zh-CN/module.md) для более подробной информации.
 
-## Как связаны APatch и KernelPatch?
+## Как связаны IcePatch и KernelPatch?
 
-APatch зависит от KernelPatch. Он унаследовал все его возможности и был расширен.
+IcePatch зависит от KernelPatch. Он унаследовал все его возможности и был расширен.
 
-Вы можете установить только KernelPatch, но это не позволит вам использовать APM (APatch Modules).
+Вы можете установить только KernelPatch, но это не позволит вам использовать APM (IcePatch Modules).
 
 [Узнайте больше о KernelPatch](https://github.com/bmax121/KernelPatch).
 
@@ -46,13 +46,13 @@ KernelPatch добавляет новый системный вызов (syscall
 
 KernelPatch не изменяет контекст SELinux, а обходит SELinux через хук. Это позволяет вам рутировать поток Android в контексте приложения без необходимости использовать `libsu` для запуска нового процесса и последующего выполнения `IPC`.
 
-Кроме того, APatch использует `magiskpolicy` для добавления дополнительной поддержки SELinux напрямую.
+Кроме того, IcePatch использует `magiskpolicy` для добавления дополнительной поддержки SELinux напрямую.
 
 ## WebUI (веб-интерфейс) APM/KPM
 
-Исходный код APatch был заимствован и модифицирован из KernelSU, поэтому APatch представил функцию WebUI с версии [10568](https://github.com/bmax121/APatch/releases/tag/10568) после того, как KernelSU представил функцию WebUI.
+Исходный код IcePatch был заимствован и модифицирован из KernelSU, поэтому IcePatch представил функцию WebUI с версии [10568](https://github.com/Anatdx/IcePatch/releases/tag/10568) после того, как KernelSU представил функцию WebUI.
 
-Реализация и требования к APatch WebUI полностью совпадают с KernelSU. WebUI, разработанный для модулей KernelSU, может прекрасно работать в APatch.
+Реализация и требования к IcePatch WebUI полностью совпадают с KernelSU. WebUI, разработанный для модулей KernelSU, может прекрасно работать в IcePatch.
 
 Если вы хотите разработать WebUI для APM или KPM, пожалуйста, обратитесь к [WebUI introduction](https://kernelsu.org/guide/module-webui.html) KernelSU для получения дополнительной информации.
 
@@ -66,11 +66,11 @@ KernelPatch не изменяет контекст SELinux, а обходит SE
 
 ## Можно ли использовать LSPosed?
 
-Запуск LSPosed зависит от Riru или Zygisk, но по умолчанию в APatch не поддерживается Riru или Zygisk, поэтому вы не можете использовать LSPosed напрямую.
+Запуск LSPosed зависит от Riru или Zygisk, но по умолчанию в IcePatch не поддерживается Riru или Zygisk, поэтому вы не можете использовать LSPosed напрямую.
 
-Однако в APatch можно добавить поддержку Zygisk или позволить LSPosed работать без какой-либо реализации Zygisk, установив определенные APM (APatch Modules).
+Однако в IcePatch можно добавить поддержку Zygisk или позволить LSPosed работать без какой-либо реализации Zygisk, установив определенные APM (IcePatch Modules).
 
-Вот два решения по запуску LSPosed на APatch:
+Вот два решения по запуску LSPosed на IcePatch:
 
 1. Обратитесь к [Поддерживается ли Zygisk?](#zygisk-support) чтобы добавить поддержку Zygisk.
 2. Если вам нужно использовать только LSPosed без других функций Zygisk, вы можете попробовать [Zloader](https://github.com/Mufanc/z-loader) [for LSPosed](https://t.me/mufanc_chan/28) чтобы загрузить только LSPosed.
@@ -88,14 +88,14 @@ Zloader все еще находится на ранней стадии разр
 Мы не можем полностью поддерживать Shamiko из-за его закрытого исходного кода и отсутствия обновлений.
 
 ::: danger
-**Разработчики APatch не несут ответственности за сбои в случаях использования Shamiko, используйте его на свой страх и риск!**
+**Разработчики IcePatch не несут ответственности за сбои в случаях использования Shamiko, используйте его на свой страх и риск!**
 :::
 
 ## Поддерживается ли Zygisk? {#zygisk-support}
 
-Как и KernelSU, APatch по умолчанию не поддерживает Zygisk.
+Как и KernelSU, IcePatch по умолчанию не поддерживает Zygisk.
 
-APatch может использовать [ZygiskNext](https://github.com/Dr-TSNG/ZygiskNext) чтобы добавить поддержку Zygisk.
+IcePatch может использовать [ZygiskNext](https://github.com/Dr-TSNG/ZygiskNext) чтобы добавить поддержку Zygisk.
 
 Также, можете использовать [Zygisk_mod](https://github.com/Admirepowered/Zygisk_mod).
 

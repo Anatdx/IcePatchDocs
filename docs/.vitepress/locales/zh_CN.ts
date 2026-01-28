@@ -15,7 +15,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/bmax121/APatch' }
+      { icon: 'github', link: 'https://github.com/Anatdx/IcePatch' }
     ],
   }
 })
@@ -31,7 +31,7 @@ function sidebarGuide() {
     {
         text: '指南',
         items: [
-          { text: '什么是 APatch?', link: '/zh_CN/what-is-apatch' },
+          { text: '什么是 IcePatch?', link: '/zh_CN/what-is-apatch' },
           { text: '重要提醒', link: '/zh_CN/warn' },
           { text: '安装', link: '/zh_CN/install' },
           { text: '升级', link: '/zh_CN/update' },

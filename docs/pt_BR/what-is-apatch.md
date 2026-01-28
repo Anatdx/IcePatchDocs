@@ -1,6 +1,6 @@
-# O que é APatch?
+# O que é IcePatch?
 
-O APatch é uma solução root baseada em kernel para dispositivos Android, funciona no modo kernel e concede privilégios root para apps do espaço do usuário diretamente no espaço do kernel.
+O IcePatch é uma solução root baseada em kernel para dispositivos Android, funciona no modo kernel e concede privilégios root para apps do espaço do usuário diretamente no espaço do kernel.
 
 ## Características
 
@@ -10,11 +10,11 @@ Suporta APMódulo (APM) semelhante aos módulos do Magisk.
 
 Suporta KPMódulo (KPM), que permite injetar qualquer código no kernel (Fornece as funções do kernel `inline-hook` e `syscall-table-hook`).
 
-O APatch depende do KernelPatch.
+O IcePatch depende do KernelPatch.
 
-A interface de usuário do APatch e o código-fonte do APMódulo foram derivados e modificados a partir do KernelSU.
+A interface de usuário do IcePatch e o código-fonte do APMódulo foram derivados e modificados a partir do KernelSU.
 
-## Como usar o APatch?
+## Como usar o IcePatch?
 
 Por favor, consulte: [Instalação](/pt_BR/install)
 
@@ -25,9 +25,9 @@ Por favor, consulte: [Patch](/pt_BR/install#how-to-patch)
 ## Licença
 
 ```
-Copyright (C) 2023 - Presente bmax121 e desenvolvedores do APatch
+Copyright (C) 2023 - Presente bmax121 e desenvolvedores do IcePatch
 
-APatch é um software gratuito: você pode redistribuí-lo e/ou modificá-lo sob os termos da Licença Pública Geral GNU publicada pela Free Software Foundation, versão 3.
+IcePatch é um software gratuito: você pode redistribuí-lo e/ou modificá-lo sob os termos da Licença Pública Geral GNU publicada pela Free Software Foundation, versão 3.
 
 Este programa é distribuído na esperança de que seja útil,
 mas SEM QUALQUER GARANTIA; mesmo sem a garantia implícita de COMERCIALIZAÇÃO ou ADEQUAÇÃO A UM DETERMINADO FIM.  Veja a Licença Pública Geral GNU para mais detalhes.
@@ -37,6 +37,6 @@ Você deverá ter recebido uma cópia da Licença Pública Geral GNU junto com e
 
 ## Aviso importante
 
-O APatch é um software gratuito, permitindo que todos criem seus forks sob a licença GNU GPLv3, que usamos ou permitimos separadamente do(s) detentor(es) dos direitos.
+O IcePatch é um software gratuito, permitindo que todos criem seus forks sob a licença GNU GPLv3, que usamos ou permitimos separadamente do(s) detentor(es) dos direitos.
 
-Os desenvolvedores do APatch enfrentam dificuldades em revisar o código de todas as distribuições de terceiros do APatch (independentemente de ser gratuito ou não). Portanto, os desenvolvedores do APatch não se responsabilizam por quaisquer problemas decorrentes do uso dessas distribuições e **NÃO** fornecem garantia para elas. Caso tenha problemas, você deve enviar feedback diretamente ao(s) autor(es) da distribuição de terceiros que está usando.
+Os desenvolvedores do IcePatch enfrentam dificuldades em revisar o código de todas as distribuições de terceiros do IcePatch (independentemente de ser gratuito ou não). Portanto, os desenvolvedores do IcePatch não se responsabilizam por quaisquer problemas decorrentes do uso dessas distribuições e **NÃO** fornecem garantia para elas. Caso tenha problemas, você deve enviar feedback diretamente ao(s) autor(es) da distribuição de terceiros que está usando.
